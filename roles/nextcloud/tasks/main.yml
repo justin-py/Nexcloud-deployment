@@ -1,0 +1,4 @@
+---
+- name: Install Nextcloud Pi
+  ansible.builtin.shell:
+    cmd: curl -sSL https://raw.githubusercontent.com/nextcloud/nextcloudpi/master/install.sh | bash

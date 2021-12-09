@@ -1,0 +1,11 @@
+---
+- name: Server Setup
+  hosts: server
+  remote_user: pi
+
+  roles:
+    - packages
+    - locales
+    - users
+    - firewall
+    - sshsecurity

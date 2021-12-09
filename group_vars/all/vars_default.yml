@@ -1,0 +1,32 @@
+---
+
+#########################################
+# COMMON
+#########################################
+
+# Enter the SSH port you wish to use
+
+common_server_url: #ENTER YOUR SERVER URL
+
+#########################################
+# PACKAGES
+#########################################
+
+# List of required packages
+
+packages_with_allowed_ufw:
+ - 
+
+packages_without_allowed_ufw:
+ - fail2ban
+ - docker
+ - "*"
+
+#########################################
+# USERS
+#########################################
+
+# Username, password, bash and local path(s) to the public key(s) you wish to configure for the deploy account 
+users_deploy_username: jpowolny
+users_public_keys_path:
+ - ~/.ssh/id_rsa.pub

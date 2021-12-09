@@ -1,0 +1,12 @@
+---
+- name: Setup ufw
+  ufw: state=enabled policy=deny
+
+# Allowments
+- name: Allow ssh traffic
+  - ufw: 
+    - rule: allow ssh
+
+- name: Allow ssh traffic
+  - ufw: rule=allow {{ item }}
+  with_items: '{{packages_with_allowed_ufw}}'

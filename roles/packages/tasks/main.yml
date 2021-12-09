@@ -1,0 +1,22 @@
+---
+- name: Add main-contrib APT repositories
+  apt_repository: repo='deb-src http://httpredir.debian.org/debian stable main contrib' state=present
+
+- name: Upgrade APT to the latest packages
+  apt: 
+    upgrade: dist
+
+- name: Install packages (with ufw rule)
+  apt: state=installed pkg={{ item }}
+  - update_cache: yes
+  with_items: '{{packages_with_allowed_ufw}}'
+
+- name: Install packages (without ufw rule)
+  apt: state=installed pkg={{ item }}
+  - update_cache: yes
+  with_items: '{{packages_without_allowed_ufw}}'
+
+- name: Setup APT update intervals
+  template:
+    src: "apt_periodic.j2"
+    dest: "/etc/apt/apt.conf.d/10periodic"
