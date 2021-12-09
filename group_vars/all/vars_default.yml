@@ -14,8 +14,7 @@ common_server_url: #ENTER YOUR SERVER URL
 
 # List of required packages
 
-packages_with_allowed_ufw:
- - 
+packages_with_allowed_ufw: 
 
 packages_without_allowed_ufw:
  - fail2ban

@@ -4,8 +4,8 @@
   remote_user: pi
 
   roles:
-    - packages
-    - locales
     - users
+    - packages
     - firewall
     - sshsecurity
+    - nextcloud

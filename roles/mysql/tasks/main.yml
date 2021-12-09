@@ -1,4 +1,0 @@
----
-- name: Run local script on remote node after transferring it
-  ansible.builtin.script:
-    cmd: ./Setup.sh
